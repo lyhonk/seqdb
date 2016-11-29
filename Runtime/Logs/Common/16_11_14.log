@@ -1,0 +1,12 @@
+[ 2016-11-14T11:09:37+08:00 ] ::1 /ot/Public/Seqdb/images/icon24_login.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002595s ]
+
+[ 2016-11-14T11:09:37+08:00 ] ::1 /ot/Public/Seqdb/images/login_logo.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001954s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002488s ]
+

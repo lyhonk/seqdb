@@ -1,0 +1,532 @@
+[ 2016-11-20T21:31:32+08:00 ] ::1 /ot/admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.004039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004980s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001115s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001187s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000191s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000251s ]
+INFO: [ AdminIndex ] --START--
+SQL: SHOW COLUMNS FROM `onethink_addons` [ RunTime:0.0904s ]
+SQL: SELECT `config` FROM `onethink_addons` WHERE `name` = 'SiteStat' AND `status` = 1 LIMIT 1   [ RunTime:0.0058s ]
+SQL: SHOW COLUMNS FROM `onethink_member` [ RunTime:0.0388s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_member` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `onethink_action_log` [ RunTime:0.0263s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_action_log` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `onethink_document` [ RunTime:0.0487s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_document` LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.0337s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_category` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `onethink_model` [ RunTime:0.0679s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_model` LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000031s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.453309s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.034252s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034317s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000953s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001013s ]
+INFO: Run Addons\SiteStat\SiteStatAddon [ RunTime:0.442885s ]
+SQL: SELECT `config` FROM `onethink_addons` WHERE `name` = 'SystemInfo' AND `status` = 1 LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000047s ]
+INFO: [ template_filter ] --END-- [ RunTime:-1.325012s ]
+SQL: select version() as v; [ RunTime:0.0004s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.254085s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.618106s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000010s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.871244s ]
+INFO: Run Addons\SystemInfo\SystemInfoAddon [ RunTime:0.871234s ]
+SQL: SELECT `config` FROM `onethink_addons` WHERE `name` = 'DevTeam' AND `status` = 1 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000129s ]
+INFO: [ template_filter ] --END-- [ RunTime:-1.600088s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011077s ]
+INFO: [ view_parse ] --END-- [ RunTime:-1.138032s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000043s ]
+INFO: [ view_filter ] --END-- [ RunTime:-1.148342s ]
+INFO: Run Addons\DevTeam\DevTeamAddon [ RunTime:0.277300s ]
+INFO: [ AdminIndex ] --END-- [ RunTime:1.591551s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011782s ]
+INFO: [ view_parse ] --END-- [ RunTime:-1.138032s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000043s ]
+INFO: [ view_filter ] --END-- [ RunTime:-1.149097s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003656s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003879s ]
+
+[ 2016-11-20T21:31:39+08:00 ] ::1 /ot/admin.php?s=/Config/group.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.004508s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005348s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000770s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000825s ]
+SQL: SHOW COLUMNS FROM `onethink_config` [ RunTime:0.0479s ]
+SQL: SELECT `id`,`name`,`title`,`extra`,`value`,`remark`,`type` FROM `onethink_config` WHERE `status` = 1 AND `group` = 1 ORDER BY `sort`  [ RunTime:0.2187s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000152s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000196s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022526s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022576s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000463s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000497s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000939s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001005s ]
+
+[ 2016-11-20T21:31:46+08:00 ] ::1 /ot/admin.php?s=/Model/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002786s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003316s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000832s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000906s ]
+SQL: SHOW COLUMNS FROM `onethink_model` [ RunTime:0.0051s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_model` WHERE `status` > -1 LIMIT 1   [ RunTime:0.0472s ]
+SQL: SELECT `id`,`name`,`title`,`extend`,`relation`,`need_pk`,`field_sort`,`field_group`,`attribute_list`,`attribute_alias`,`template_list`,`template_add`,`template_edit`,`list_grid`,`list_row`,`search_key`,`search_list`,`create_time`,`update_time`,`status`,`engine_type` FROM `onethink_model` WHERE `status` > -1 ORDER BY `id` desc LIMIT 0,10   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000135s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000178s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.036978s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.037026s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000574s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000608s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000998s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001084s ]
+
+[ 2016-11-20T21:31:53+08:00 ] ::1 /ot/admin.php?s=/model/edit/id/9.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002948s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003724s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001004s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001090s ]
+SQL: SHOW COLUMNS FROM `onethink_model` [ RunTime:0.0095s ]
+SQL: SELECT `id`,`name`,`title`,`extend`,`relation`,`need_pk`,`field_sort`,`field_group`,`attribute_list`,`attribute_alias`,`template_list`,`template_add`,`template_edit`,`list_grid`,`list_row`,`search_key`,`search_list`,`create_time`,`update_time`,`status`,`engine_type` FROM `onethink_model` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `onethink_attribute` [ RunTime:0.0560s ]
+SQL: SELECT `id`,`name`,`title`,`is_show` FROM `onethink_attribute` WHERE `model_id` = 9  [ RunTime:0.2221s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000361s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000451s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\phpStudy\WWW\ot\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 137 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\phpStudy\WWW\ot\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 137 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\phpStudy\WWW\ot\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 137 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\phpStudy\WWW\ot\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 137 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\phpStudy\WWW\ot\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 137 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\phpStudy\WWW\ot\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 137 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\phpStudy\WWW\ot\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 137 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\phpStudy\WWW\ot\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 137 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\phpStudy\WWW\ot\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 137 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\phpStudy\WWW\ot\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 137 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\phpStudy\WWW\ot\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 137 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\phpStudy\WWW\ot\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 137 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\phpStudy\WWW\ot\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 137 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\phpStudy\WWW\ot\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 137 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\phpStudy\WWW\ot\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 137 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\phpStudy\WWW\ot\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 137 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\phpStudy\WWW\ot\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 137 行.
+NOTIC: [8] Undefined index: group D:\phpStudy\WWW\ot\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 163 行.
+NOTIC: [8] Undefined index: group D:\phpStudy\WWW\ot\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 163 行.
+NOTIC: [8] Undefined index: group D:\phpStudy\WWW\ot\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 163 行.
+NOTIC: [8] Undefined index: group D:\phpStudy\WWW\ot\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 163 行.
+NOTIC: [8] Undefined index: group D:\phpStudy\WWW\ot\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 163 行.
+NOTIC: [8] Undefined index: group D:\phpStudy\WWW\ot\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 163 行.
+NOTIC: [8] Undefined index: group D:\phpStudy\WWW\ot\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 163 行.
+NOTIC: [8] Undefined index: group D:\phpStudy\WWW\ot\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 163 行.
+NOTIC: [8] Undefined index: group D:\phpStudy\WWW\ot\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 163 行.
+NOTIC: [8] Undefined index: group D:\phpStudy\WWW\ot\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 163 行.
+NOTIC: [8] Undefined index: group D:\phpStudy\WWW\ot\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 163 行.
+NOTIC: [8] Undefined index: group D:\phpStudy\WWW\ot\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 163 行.
+NOTIC: [8] Undefined index: group D:\phpStudy\WWW\ot\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 163 行.
+NOTIC: [8] Undefined index: group D:\phpStudy\WWW\ot\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 163 行.
+NOTIC: [8] Undefined index: group D:\phpStudy\WWW\ot\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 163 行.
+NOTIC: [8] Undefined index: group D:\phpStudy\WWW\ot\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 163 行.
+NOTIC: [8] Undefined index: group D:\phpStudy\WWW\ot\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 163 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.038640s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.038704s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000698s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000737s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000706s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000749s ]
+
+[ 2016-11-20T21:35:55+08:00 ] ::1 /ot/admin.php?s=/Attribute/index/model_id/9.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.025015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.025996s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001901s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001973s ]
+SQL: SHOW COLUMNS FROM `onethink_attribute` [ RunTime:0.0069s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_attribute` WHERE `model_id` = 9 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`name`,`title`,`field`,`type`,`value`,`remark`,`is_show`,`extra`,`model_id`,`is_must`,`status`,`update_time`,`create_time`,`validate_rule`,`validate_time`,`error_info`,`validate_type`,`auto_rule`,`auto_time`,`auto_type` FROM `onethink_attribute` WHERE `model_id` = 9 ORDER BY `id` desc LIMIT 0,10   [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000135s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000179s ]
+SQL: SHOW COLUMNS FROM `onethink_model` [ RunTime:0.0064s ]
+SQL: SELECT `title` FROM `onethink_model` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0004s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.089082s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.089127s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.012711s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.012954s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.017089s ]
+INFO: [ app_end ] --END-- [ RunTime:0.017470s ]
+
+[ 2016-11-20T21:35:58+08:00 ] ::1 /ot/admin.php?s=/Attribute/add/model_id/9.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002922s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004268s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001182s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001276s ]
+SQL: SHOW COLUMNS FROM `onethink_model` [ RunTime:0.0060s ]
+SQL: SELECT `title`,`name`,`field_group` FROM `onethink_model` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000184s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000231s ]
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\ot\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 89 行.
+SQL: SELECT `title` FROM `onethink_model` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: name D:\phpStudy\WWW\ot\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 106 行.
+NOTIC: [8] Undefined index: title D:\phpStudy\WWW\ot\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 112 行.
+NOTIC: [8] Undefined index: field D:\phpStudy\WWW\ot\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 127 行.
+NOTIC: [8] Undefined index: extra D:\phpStudy\WWW\ot\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 134 行.
+NOTIC: [8] Undefined index: value D:\phpStudy\WWW\ot\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 141 行.
+NOTIC: [8] Undefined index: remark D:\phpStudy\WWW\ot\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 147 行.
+NOTIC: [8] Undefined index: validate_rule D:\phpStudy\WWW\ot\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 190 行.
+NOTIC: [8] Undefined index: error_info D:\phpStudy\WWW\ot\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 196 行.
+NOTIC: [8] Undefined index: auto_rule D:\phpStudy\WWW\ot\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 222 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\ot\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 241 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.045867s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.045928s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000557s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000589s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000711s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000761s ]
+
+[ 2016-11-20T21:37:02+08:00 ] ::1 /ot/admin.php?s=/Attribute/update.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.014858s ]
+INFO: [ app_init ] --END-- [ RunTime:0.024588s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001037s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001090s ]
+SQL: SHOW COLUMNS FROM `onethink_attribute` [ RunTime:0.0056s ]
+SQL: SELECT * FROM `onethink_attribute` WHERE `name` = 'sample_name' AND `model_id` = 9 LIMIT 1   [ RunTime:0.0006s ]
+SQL: INSERT INTO `onethink_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`validate_type`,`validate_rule`,`error_info`,`validate_time`,`auto_type`,`auto_rule`,`auto_time`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('sample_name','样本名称','string','varchar(255) NOT NULL','','','','1','0','regex','','','3','function','','3','0','9','1','1479649022','1479649022') [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `onethink_model` [ RunTime:0.0061s ]
+SQL: SELECT `name`,`extend` FROM `onethink_model` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0004s ]
+SQL:                 SHOW TABLES LIKE 'onethink_data'; [ RunTime:0.0102s ]
+SQL:                 ALTER TABLE `onethink_data`
+ADD COLUMN `sample_name`  varchar(255) NOT NULL  COMMENT '样本名称'; [ RunTime:0.3543s ]
+SQL: SELECT `name` FROM `onethink_model` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `onethink_action` [ RunTime:0.0416s ]
+SQL: SELECT * FROM `onethink_action` WHERE `name` = 'update_attribute' LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `onethink_action_log` [ RunTime:0.0058s ]
+SQL: INSERT INTO `onethink_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('8','1','0','attribute','106','1479649022','操作url：/ot/admin.php?s=/Attribute/update.html') [ RunTime:0.0009s ]
+
+[ 2016-11-20T21:37:05+08:00 ] ::1 /ot/admin.php?s=/Attribute/index/model_id/9.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002814s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003377s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000862s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000938s ]
+SQL: SHOW COLUMNS FROM `onethink_attribute` [ RunTime:0.0050s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_attribute` WHERE `model_id` = 9 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `id`,`name`,`title`,`field`,`type`,`value`,`remark`,`is_show`,`extra`,`model_id`,`is_must`,`status`,`update_time`,`create_time`,`validate_rule`,`validate_time`,`error_info`,`validate_type`,`auto_rule`,`auto_time`,`auto_type` FROM `onethink_attribute` WHERE `model_id` = 9 ORDER BY `id` desc LIMIT 0,10   [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000131s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000175s ]
+SQL: SHOW COLUMNS FROM `onethink_model` [ RunTime:0.0078s ]
+SQL: SELECT `title` FROM `onethink_model` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0005s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.191284s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.191326s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.199885s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.199941s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001457s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001532s ]
+
+[ 2016-11-20T21:37:09+08:00 ] ::1 /ot/admin.php?s=/Attribute/add/model_id/9.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003841s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004467s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001157s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001269s ]
+SQL: SHOW COLUMNS FROM `onethink_model` [ RunTime:0.0066s ]
+SQL: SELECT `title`,`name`,`field_group` FROM `onethink_model` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000197s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000244s ]
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\ot\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 89 行.
+SQL: SELECT `title` FROM `onethink_model` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: name D:\phpStudy\WWW\ot\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 106 行.
+NOTIC: [8] Undefined index: title D:\phpStudy\WWW\ot\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 112 行.
+NOTIC: [8] Undefined index: field D:\phpStudy\WWW\ot\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 127 行.
+NOTIC: [8] Undefined index: extra D:\phpStudy\WWW\ot\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 134 行.
+NOTIC: [8] Undefined index: value D:\phpStudy\WWW\ot\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 141 行.
+NOTIC: [8] Undefined index: remark D:\phpStudy\WWW\ot\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 147 行.
+NOTIC: [8] Undefined index: validate_rule D:\phpStudy\WWW\ot\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 190 行.
+NOTIC: [8] Undefined index: error_info D:\phpStudy\WWW\ot\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 196 行.
+NOTIC: [8] Undefined index: auto_rule D:\phpStudy\WWW\ot\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 222 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\ot\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 241 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.091753s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.091805s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000528s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000564s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000903s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000971s ]
+
+[ 2016-11-20T21:37:29+08:00 ] ::1 /ot/admin.php?s=/Attribute/update.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002889s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003436s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000628s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000674s ]
+SQL: SHOW COLUMNS FROM `onethink_attribute` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `onethink_attribute` WHERE `name` = 'sample_type' AND `model_id` = 9 LIMIT 1   [ RunTime:0.0009s ]
+SQL: INSERT INTO `onethink_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`validate_type`,`validate_rule`,`error_info`,`validate_time`,`auto_type`,`auto_rule`,`auto_time`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('sample_type','样本类型','string','varchar(255) NOT NULL','','','','1','0','regex','','','3','function','','3','0','9','1','1479649049','1479649049') [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `onethink_model` [ RunTime:0.0062s ]
+SQL: SELECT `name`,`extend` FROM `onethink_model` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0004s ]
+SQL:                 SHOW TABLES LIKE 'onethink_data'; [ RunTime:0.0007s ]
+SQL:                 ALTER TABLE `onethink_data`
+ADD COLUMN `sample_type`  varchar(255) NOT NULL  COMMENT '样本类型'; [ RunTime:0.2832s ]
+SQL: SELECT `name` FROM `onethink_model` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `onethink_action` [ RunTime:0.0054s ]
+SQL: SELECT * FROM `onethink_action` WHERE `name` = 'update_attribute' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `onethink_action_log` [ RunTime:0.0056s ]
+SQL: INSERT INTO `onethink_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('8','1','0','attribute','107','1479649049','操作url：/ot/admin.php?s=/Attribute/update.html') [ RunTime:0.0003s ]
+
+[ 2016-11-20T21:37:31+08:00 ] ::1 /ot/admin.php?s=/Attribute/index/model_id/9.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003919s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004497s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000682s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000734s ]
+SQL: SHOW COLUMNS FROM `onethink_attribute` [ RunTime:0.0069s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_attribute` WHERE `model_id` = 9 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`name`,`title`,`field`,`type`,`value`,`remark`,`is_show`,`extra`,`model_id`,`is_must`,`status`,`update_time`,`create_time`,`validate_rule`,`validate_time`,`error_info`,`validate_type`,`auto_rule`,`auto_time`,`auto_type` FROM `onethink_attribute` WHERE `model_id` = 9 ORDER BY `id` desc LIMIT 0,10   [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000148s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000206s ]
+SQL: SHOW COLUMNS FROM `onethink_model` [ RunTime:0.0060s ]
+SQL: SELECT `title` FROM `onethink_model` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0005s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021948s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021991s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000640s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000673s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000860s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000917s ]
+
+[ 2016-11-20T21:37:33+08:00 ] ::1 /ot/admin.php?s=/Attribute/add/model_id/9.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002792s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003363s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000688s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000734s ]
+SQL: SHOW COLUMNS FROM `onethink_model` [ RunTime:0.0052s ]
+SQL: SELECT `title`,`name`,`field_group` FROM `onethink_model` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000197s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000268s ]
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\ot\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 89 行.
+SQL: SELECT `title` FROM `onethink_model` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: name D:\phpStudy\WWW\ot\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 106 行.
+NOTIC: [8] Undefined index: title D:\phpStudy\WWW\ot\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 112 行.
+NOTIC: [8] Undefined index: field D:\phpStudy\WWW\ot\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 127 行.
+NOTIC: [8] Undefined index: extra D:\phpStudy\WWW\ot\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 134 行.
+NOTIC: [8] Undefined index: value D:\phpStudy\WWW\ot\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 141 行.
+NOTIC: [8] Undefined index: remark D:\phpStudy\WWW\ot\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 147 行.
+NOTIC: [8] Undefined index: validate_rule D:\phpStudy\WWW\ot\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 190 行.
+NOTIC: [8] Undefined index: error_info D:\phpStudy\WWW\ot\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 196 行.
+NOTIC: [8] Undefined index: auto_rule D:\phpStudy\WWW\ot\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 222 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\ot\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 241 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017476s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017514s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000552s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000586s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000652s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000693s ]
+
+[ 2016-11-20T21:38:49+08:00 ] ::1 /ot/admin.php?s=/Attribute/update.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.007719s ]
+INFO: [ app_init ] --END-- [ RunTime:0.034445s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001492s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001559s ]
+SQL: SHOW COLUMNS FROM `onethink_attribute` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `onethink_attribute` WHERE `name` = 'seqtype' AND `model_id` = 9 LIMIT 1   [ RunTime:0.0008s ]
+SQL: INSERT INTO `onethink_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`validate_type`,`validate_rule`,`error_info`,`validate_time`,`auto_type`,`auto_rule`,`auto_time`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('seqtype','测序类型','string','varchar(255) NOT NULL','','','','1','0','regex','','','3','function','','3','0','9','1','1479649128','1479649128') [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `onethink_model` [ RunTime:0.0059s ]
+SQL: SELECT `name`,`extend` FROM `onethink_model` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0003s ]
+SQL:                 SHOW TABLES LIKE 'onethink_data'; [ RunTime:0.0008s ]
+SQL:                 ALTER TABLE `onethink_data`
+ADD COLUMN `seqtype`  varchar(255) NOT NULL  COMMENT '测序类型'; [ RunTime:0.4796s ]
+SQL: SELECT `name` FROM `onethink_model` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `onethink_action` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `onethink_action` WHERE `name` = 'update_attribute' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `onethink_action_log` [ RunTime:0.0045s ]
+SQL: INSERT INTO `onethink_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('8','1','0','attribute','108','1479649128','操作url：/ot/admin.php?s=/Attribute/update.html') [ RunTime:0.0004s ]
+
+[ 2016-11-20T21:38:50+08:00 ] ::1 /ot/admin.php?s=/Attribute/index/model_id/9.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.005703s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006390s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000933s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001010s ]
+SQL: SHOW COLUMNS FROM `onethink_attribute` [ RunTime:0.0061s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_attribute` WHERE `model_id` = 9 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `id`,`name`,`title`,`field`,`type`,`value`,`remark`,`is_show`,`extra`,`model_id`,`is_must`,`status`,`update_time`,`create_time`,`validate_rule`,`validate_time`,`error_info`,`validate_type`,`auto_rule`,`auto_time`,`auto_type` FROM `onethink_attribute` WHERE `model_id` = 9 ORDER BY `id` desc LIMIT 0,10   [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000141s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000189s ]
+SQL: SHOW COLUMNS FROM `onethink_model` [ RunTime:0.0055s ]
+SQL: SELECT `title` FROM `onethink_model` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0004s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.066152s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.066195s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.119031s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.119081s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.076298s ]
+INFO: [ app_end ] --END-- [ RunTime:0.076363s ]
+
+[ 2016-11-20T21:38:54+08:00 ] ::1 /ot/admin.php?s=/Attribute/add/model_id/9.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002874s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003396s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000753s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000822s ]
+SQL: SHOW COLUMNS FROM `onethink_model` [ RunTime:0.0053s ]
+SQL: SELECT `title`,`name`,`field_group` FROM `onethink_model` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000184s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000232s ]
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\ot\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 89 行.
+SQL: SELECT `title` FROM `onethink_model` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: name D:\phpStudy\WWW\ot\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 106 行.
+NOTIC: [8] Undefined index: title D:\phpStudy\WWW\ot\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 112 行.
+NOTIC: [8] Undefined index: field D:\phpStudy\WWW\ot\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 127 行.
+NOTIC: [8] Undefined index: extra D:\phpStudy\WWW\ot\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 134 行.
+NOTIC: [8] Undefined index: value D:\phpStudy\WWW\ot\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 141 行.
+NOTIC: [8] Undefined index: remark D:\phpStudy\WWW\ot\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 147 行.
+NOTIC: [8] Undefined index: validate_rule D:\phpStudy\WWW\ot\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 190 行.
+NOTIC: [8] Undefined index: error_info D:\phpStudy\WWW\ot\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 196 行.
+NOTIC: [8] Undefined index: auto_rule D:\phpStudy\WWW\ot\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 222 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\ot\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 241 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.046447s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.046492s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000619s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000651s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000851s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000913s ]
+
+[ 2016-11-20T21:39:14+08:00 ] ::1 /ot/admin.php?s=/Attribute/update.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000071s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003154s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003911s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000680s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000732s ]
+SQL: SHOW COLUMNS FROM `onethink_attribute` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `onethink_attribute` WHERE `name` = 'platform' AND `model_id` = 9 LIMIT 1   [ RunTime:0.0007s ]
+SQL: INSERT INTO `onethink_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`validate_type`,`validate_rule`,`error_info`,`validate_time`,`auto_type`,`auto_rule`,`auto_time`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('platform','测序平台','string','varchar(255) NOT NULL','','','','1','0','regex','','','3','function','','3','0','9','1','1479649154','1479649154') [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `onethink_model` [ RunTime:0.0053s ]
+SQL: SELECT `name`,`extend` FROM `onethink_model` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0004s ]
+SQL:                 SHOW TABLES LIKE 'onethink_data'; [ RunTime:0.0006s ]
+SQL:                 ALTER TABLE `onethink_data`
+ADD COLUMN `platform`  varchar(255) NOT NULL  COMMENT '测序平台'; [ RunTime:0.1823s ]
+SQL: SELECT `name` FROM `onethink_model` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `onethink_action` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `onethink_action` WHERE `name` = 'update_attribute' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `onethink_action_log` [ RunTime:0.0058s ]
+SQL: INSERT INTO `onethink_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('8','1','0','attribute','109','1479649154','操作url：/ot/admin.php?s=/Attribute/update.html') [ RunTime:0.0004s ]
+
+[ 2016-11-20T21:39:16+08:00 ] ::1 /ot/admin.php?s=/Attribute/index/model_id/9.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003875s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004643s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000604s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000658s ]
+SQL: SHOW COLUMNS FROM `onethink_attribute` [ RunTime:0.0062s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_attribute` WHERE `model_id` = 9 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `id`,`name`,`title`,`field`,`type`,`value`,`remark`,`is_show`,`extra`,`model_id`,`is_must`,`status`,`update_time`,`create_time`,`validate_rule`,`validate_time`,`error_info`,`validate_type`,`auto_rule`,`auto_time`,`auto_type` FROM `onethink_attribute` WHERE `model_id` = 9 ORDER BY `id` desc LIMIT 0,10   [ RunTime:0.0011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000253s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000316s ]
+SQL: SHOW COLUMNS FROM `onethink_model` [ RunTime:0.0066s ]
+SQL: SELECT `title` FROM `onethink_model` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0004s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027146s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027196s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000595s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000635s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000897s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+

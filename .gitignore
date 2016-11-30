@@ -1,0 +1,4 @@
+phpmyadmin/
+Application/Common/Conf/config.php
+Application/User/Conf/config.php
+Runtime/

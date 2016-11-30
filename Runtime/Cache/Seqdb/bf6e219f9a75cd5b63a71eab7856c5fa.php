@@ -56,6 +56,13 @@
                 <li <?php if((CONTROLLER_NAME) == "Library"): ?>class="active"<?php endif; ?>><a href="<?php echo U('Library/index');?>">文库管理</a></li>
                 <li <?php if((CONTROLLER_NAME) == "Seq"): ?>class="active"<?php endif; ?>><a href="<?php echo U('Seq/index');?>">送样管理</a></li>
                 <li <?php if((CONTROLLER_NAME) == "Data"): ?>class="active"<?php endif; ?>><a href="<?php echo U('Data/index');?>">数据管理</a></li>
+                <?php if(is_administrator()): ?><li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">系统管理<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="<?php echo U('Sys/index');?>">用户管理</a></li>
+                            <li><a href="<?php echo U('Sys/index');?>">日志管理</a></li>
+                        </ul>
+                    </li><?php endif; ?>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">

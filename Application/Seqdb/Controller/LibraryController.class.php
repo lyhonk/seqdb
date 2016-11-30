@@ -8,6 +8,8 @@ class LibraryController extends AdminController {
     public function index(){
         $library = M('library');
         $data = $library->order('id desc')->select();
+        $uid = is_login();
+        $this->assign('uid',$uid);
         $this->assign('library',$data);
         $this->display();
     }
@@ -116,6 +118,8 @@ class LibraryController extends AdminController {
         $library = M('library');
         $condition['id'] = I('sid');
         $result = $library->where($condition)->select();
+        $uid = is_login();
+        $this->assign('uid',$uid);
         $this->assign('library',$result[0]);
         $this->display(detail);
     }

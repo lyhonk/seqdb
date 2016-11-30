@@ -119,6 +119,8 @@ class SampleController extends AdminController {
         $sample = M('sample');
         $condition['id'] = I('sid');
         $result = $sample->where($condition)->select();
+        $uid = is_login();
+        $this->assign('uid',$uid);
         $this->assign('sample',$result[0]);
         $this->display(detail);
     }

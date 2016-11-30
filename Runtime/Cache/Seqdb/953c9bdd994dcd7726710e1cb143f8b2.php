@@ -56,6 +56,13 @@
                 <li <?php if((CONTROLLER_NAME) == "Library"): ?>class="active"<?php endif; ?>><a href="<?php echo U('Library/index');?>">文库管理</a></li>
                 <li <?php if((CONTROLLER_NAME) == "Seq"): ?>class="active"<?php endif; ?>><a href="<?php echo U('Seq/index');?>">送样管理</a></li>
                 <li <?php if((CONTROLLER_NAME) == "Data"): ?>class="active"<?php endif; ?>><a href="<?php echo U('Data/index');?>">数据管理</a></li>
+                <?php if(is_administrator()): ?><li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">系统管理<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="<?php echo U('Sys/index');?>">用户管理</a></li>
+                            <li><a href="<?php echo U('Sys/index');?>">日志管理</a></li>
+                        </ul>
+                    </li><?php endif; ?>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
@@ -114,9 +121,9 @@
         </div>
         <div class="col-md-6"></div>
         <div class="col-md-6">
-            <a class="btn btn-primary" style="margin-top: 30px;" href="/index.php?s=/Library/update/sid/<?php echo ($sample['id']); ?>" role="button" target="_blank">修改文库信息</a>
-            <a class="btn btn-primary" style="margin-top: 30px; margin-left: 30px;" href="/index.php?s=/Library/del/sid/<?php echo ($sample['id']); ?>" role="button" target="_blank">删除此文库</a>
-            <a class="btn btn-primary" style="margin-top: 30px; margin-left: 30px;" href="/index.php?s=/Library/index" role="button">返回文库列表</a>
+            <?php if(($library['operator']) == $uid): ?><a class="btn btn-primary" style="margin-top: 30px; margin-left: 180px;" href="/index.php?s=/Library/update/sid/<?php echo ($sample['id']); ?>" role="button" target="_blank">修改文库信息</a>
+            <a class="btn btn-danger" style="margin-top: 30px; margin-left: 20px;" href="/index.php?s=/Library/del/sid/<?php echo ($sample['id']); ?>" role="button" target="_blank">删除此文库</a><?php endif; ?>
+            <a class="btn btn-primary pull-right" style="margin-top: 30px;" href="/index.php?s=/Library/index" role="button">返回文库列表</a>
         </div>
     </div>
 

@@ -27,7 +27,7 @@
                     <tr><td>已使用质量</td><td>{$sample['used_mass']}</td>
                     <tr><td>剩余质量</td><td>{$sample['rest']}</td>
                     <tr><td>提取时间</td><td>{:time_format($sample['extraction_data'],"Y-m-d")}</td>
-                    <tr><td>操作人员</td><td>{:get_nickname($sample['operator'])}--{$sample['operator']}--{:is_login()}</td>
+                    <tr><td>操作人员</td><td>{:get_nickname($sample['operator'])}</td>
                     <tr><td>创建时间</td><td>{:time_format($sample['create_time'],"Y-m-d")}</td>
                     <tr><td>更新时间</td><td>{:time_format($sample['update_time'],"Y-m-d")}</td>
                     <tr><td>备注</td><td>{$sample['comment']}</td>
@@ -38,9 +38,11 @@
         </div>
         <div class="col-md-6"></div>
         <div class="col-md-6">
-            <eq name="sample['operator']" value="4"><a class="btn btn-info" style="margin-top: 30px;" href="__URL__/update/sid/{$sample['id']}" role="button" target="_blank">修改信息</a>
-            <a class="btn btn-danger" style="margin-top: 30px; margin-left: 30px;" href="__URL__/del/sid/{$sample['id']}" role="button" target="_blank">删除样本</a></eq>         
-            <a class="btn btn-primary pull-right" style="margin-top: 30px; margin-left: 30px;" href="__URL__/index" role="button">返回样本列表</a>
+            <eq name="sample['operator']" value="$uid">
+            <a class="btn btn-info" style="margin-top: 30px; margin-left: 180px;" href="__URL__/update/sid/{$sample['id']}" role="button" target="_blank">修改样本信息</a>
+            <a class="btn btn-danger" style="margin-top: 30px; margin-left: 20px;" href="__URL__/del/sid/{$sample['id']}" role="button" target="_blank">删除此样本</a> </eq>
+            <a class="btn btn-primary pull-right" style="margin-top: 30px;" href="__URL__/index" role="button">返回样本列表</a>
+
         </div>
     </div>
 

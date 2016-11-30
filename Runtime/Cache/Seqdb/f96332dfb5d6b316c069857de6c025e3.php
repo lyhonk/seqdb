@@ -56,6 +56,13 @@
                 <li <?php if((CONTROLLER_NAME) == "Library"): ?>class="active"<?php endif; ?>><a href="<?php echo U('Library/index');?>">文库管理</a></li>
                 <li <?php if((CONTROLLER_NAME) == "Seq"): ?>class="active"<?php endif; ?>><a href="<?php echo U('Seq/index');?>">送样管理</a></li>
                 <li <?php if((CONTROLLER_NAME) == "Data"): ?>class="active"<?php endif; ?>><a href="<?php echo U('Data/index');?>">数据管理</a></li>
+                <?php if(is_administrator()): ?><li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">系统管理<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="<?php echo U('Sys/index');?>">用户管理</a></li>
+                            <li><a href="<?php echo U('Sys/index');?>">日志管理</a></li>
+                        </ul>
+                    </li><?php endif; ?>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
@@ -107,7 +114,7 @@
                                 <td><?php echo get_seqlib_count($obj['seq_id']);?></td>
                                 <td><?php echo ($obj['comment']); ?></td>
                                 <td><?php echo get_nickname($obj['operator']);?></td>
-                                <td><a href="/index.php?s=/Seq/detail/sid/<?php echo ($obj["id"]); ?>">详情</a> |<a href="/index.php?s=/Seq/update/sid/<?php echo ($obj["id"]); ?>">修改</a> | <a href="/index.php?s=/Seq/del/sid/<?php echo ($obj["id"]); ?>">删除</a></td>
+                                <td><a href="/index.php?s=/Seq/detail/sid/<?php echo ($obj["id"]); ?>">详情</a> <?php if(($obj['operator']) == $uid): ?>| <a href="/index.php?s=/Seq/update/sid/<?php echo ($obj["id"]); ?>">修改</a> | <a href="/index.php?s=/Seq/del/sid/<?php echo ($obj["id"]); ?>">删除</a><?php endif; ?></td>
                             </tr><?php endforeach; endif; ?>
                         </tbody>
 

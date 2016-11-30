@@ -34,7 +34,7 @@
     <nav class="navbar navbar-inverse navbar-static-top">
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">SedDB</a>
+          <a class="navbar-brand" href="#">SeqDB</a>
         </div>
 
         <div id="navbar" class="navbar-collapse collapse">
@@ -43,6 +43,13 @@
                 <li><a href="<?php echo U('library/index');?>">文库管理</a></li>
                 <li><a href="<?php echo U('seq/index');?>">送样管理</a></li>
                 <li><a href="<?php echo U('data/index');?>">数据管理</a></li>
+                <?php if(is_administrator()): ?><li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">系统管理<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="<?php echo U('Sys/index');?>">用户管理</a></li>
+                            <li><a href="<?php echo U('Sys/index');?>">日志管理</a></li>
+                        </ul>
+                    </li><?php endif; ?>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <?php if(is_login()): ?><li class="dropdown">

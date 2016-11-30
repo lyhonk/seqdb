@@ -29,7 +29,7 @@
                                 <td>{:get_seqlib_count($obj['seq_id'])}</td>
                                 <td>{$obj['comment']}</td>
                                 <td>{:get_nickname($obj['operator'])}</td>
-                                <td><a href="__URL__/detail/sid/{$obj.id}">详情</a> |<a href="__URL__/update/sid/{$obj.id}">修改</a> | <a href="__URL__/del/sid/{$obj.id}">删除</a></td>
+                                <td><a href="__URL__/detail/sid/{$obj.id}">详情</a> <eq name="obj['operator']" value="$uid"> | <a href="__URL__/update/sid/{$obj.id}">修改</a> | <a href="__URL__/del/sid/{$obj.id}">删除</a></eq></td>
                             </tr>
                             </foreach>
                         </tbody>

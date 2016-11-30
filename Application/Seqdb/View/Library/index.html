@@ -33,7 +33,7 @@
                                 <td>{$obj['peak']}</td>
                                 <td>{$obj['conc_qubit']} (ng/uL) | {$obj['conc_qpcr']} (nM)</td>
                                 <td>{$obj['description']}</td>
-                                <td><a href="__URL__/detail/sid/{$obj.id}">详情</a> <eq name="obj['operator']" value="is_login()">| <a href="__URL__/update/sid/{$obj.id}">修改</a> | <a href="__URL__/del/sid/{$obj.id}">删除</a></eq></td>
+                                <td><a href="__URL__/detail/sid/{$obj.id}">详情</a> <eq name="obj['operator']" value="$uid">| <a href="__URL__/update/sid/{$obj.id}">修改</a> | <a href="__URL__/del/sid/{$obj.id}">删除</a></eq></td>
                             </tr>
                             </foreach>
                         </tbody>

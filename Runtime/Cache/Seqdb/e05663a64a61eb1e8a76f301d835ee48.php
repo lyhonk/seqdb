@@ -56,6 +56,13 @@
                 <li <?php if((CONTROLLER_NAME) == "Library"): ?>class="active"<?php endif; ?>><a href="<?php echo U('Library/index');?>">文库管理</a></li>
                 <li <?php if((CONTROLLER_NAME) == "Seq"): ?>class="active"<?php endif; ?>><a href="<?php echo U('Seq/index');?>">送样管理</a></li>
                 <li <?php if((CONTROLLER_NAME) == "Data"): ?>class="active"<?php endif; ?>><a href="<?php echo U('Data/index');?>">数据管理</a></li>
+                <?php if(is_administrator()): ?><li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">系统管理<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="<?php echo U('Sys/index');?>">用户管理</a></li>
+                            <li><a href="<?php echo U('Sys/index');?>">日志管理</a></li>
+                        </ul>
+                    </li><?php endif; ?>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
@@ -272,6 +279,7 @@
                                 $("#sampleid").selectpicker('refresh');
                             }else{
                                 $("#libid").empty();
+                                $('#libid').append("<option value='00' selected> 文库未在本数据库 </option>");
                                 for (var i = 0; i < data.length; i++) {
                                     $('#libid').append("<option value='"+data[i].lib_id+"'>"+data[i].lib_id+"--"+data[i].seqtype+"</option>");
                                 }
@@ -300,12 +308,12 @@
                             $("#sampleid").empty();
                             if( data.length === 0){
                                 $("#sampleid").empty();
-                                $('#sampleid').append("<option value='00' selected> 样本未在本数据库 </option>");
+                                $('#sampleid').append("<option value='0' selected> 样本未在本数据库 </option>");
                                 $("#sampleid").selectpicker('refresh');
                             }else{
                                 $("#sampleid").empty();
                                 for (var i = 0; i < data.length; i++) {
-                                    $('#sampleid').append("<option value='"+data[i].lib_id+"'>"+data[i].lib_id+"--"+data[i].seqtype+"</option>");
+                                    $('#sampleid').append("<option value='"+data[i].sample_id+"'>"+data[i].sample_id+"</option>");
                                 }
                                 $("#sampleid").selectpicker('refresh');
                             }

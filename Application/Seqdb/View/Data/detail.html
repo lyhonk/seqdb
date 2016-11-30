@@ -27,7 +27,7 @@
                     <eq name="data['sample_id']" value="00">
                         <tr><td>样本编号</td><td>未收录</td></tr>
                     <else/>
-                        <tr><td>样本编号</td><td><a href="{:get_sampleinfo($data['sample_id'])}">SampleID: {$data['sample_id']}</a> </td></tr>
+                        <tr><td>样本编号</td><td><a href="{:get_sampleinfo($data['sample_id'])}">SampleID: {$data['sample_id']}</a></td></tr>
                     </eq>
                     
                     <tr><td>原文件名</td><td>{$data['origin_name']}</td></tr>

@@ -25,7 +25,22 @@ class DataController extends AdminController {
             $new_name = I('new_name');
             $seq_id = I('seq_id');
             $lib_id = I('lib_id');
-            $sample_id = I('sample_id');          
+            
+            if($seq_id == "00"){
+                $seq_id = 0;
+                $lib_id = 0;
+                $sample_id = 0;
+            }elseif($lib_id == "00"){
+                $seq_id = I('seq_id');
+		$lib_id = 0;
+                $sample_id = 0;
+            }else{
+                $seq_id = I('seq_id');
+                $lib_id = I('lib_id');
+                $sample_id = M('library')->where('lib_id='.$lib_id)->field('sample_id')->select();
+                $sample_id = $sample_id[0]['sample_id'];
+            }
+          
             $cloudpath = I('cloudpath');
             $localpath = I('localpath');
             $comment = I('comment');
@@ -39,7 +54,9 @@ class DataController extends AdminController {
                 $sample_type="未收录";
             }else{
                 $sample_name = M('sample')->where('sampleid='.$sample_id)->field('name')->select();
+                $sample_name = $sample_name[0]['name'];
                 $sample_type = M('sample')->where('sampleid='.$sample_id)->field('type')->select();
+                $sample_type = $sample_type[0]['type'];
             }
             
             if($lib_id=="00" || $lib_id==""){
@@ -47,7 +64,9 @@ class DataController extends AdminController {
                 $platform="未收录";
             }else{
                 $seqtype = M('seqlib')->where('seq_id='.$seq_id.' and lib_id='.$lib_id)->field('seqtype')->select();
+                $seqtype = $seqtype[0]['seqtype'];
                 $platform = M('seqlib')->where('seq_id='.$seq_id.' and lib_id='.$lib_id)->field('platform')->select();
+                $platform = $platform[0]['platform'];
             }
 
             $data['data_id'] = $data_id;
@@ -77,7 +96,6 @@ class DataController extends AdminController {
             $datafile -> add($data);
 
             $this->success('添加成功',U('data/index'));
-
 
         }else{
             $seq = M('seq');
@@ -123,6 +141,25 @@ class DataController extends AdminController {
             $seq_id = I('seq_id');
             $lib_id = I('lib_id');
             $sample_id = I('sample_id');          
+
+            $seq_id = I('seq_id');
+            $lib_id = I('lib_id');
+    
+            if($seq_id == "00"){
+                $seq_id = 0;
+                $lib_id = 0;
+                $sample_id = 0;
+            }elseif($lib_id == "00"){
+                $seq_id = I('seq_id');
+                $lib_id = 0;
+                $sample_id = 0;
+            }else{
+                $seq_id = I('seq_id');
+                $lib_id = I('lib_id');
+                $sample_id = M('library')->where('lib_id='.$lib_id)->field('sample_id')->select();
+                $sample_id = $sample_id[0]['sample_id'];
+            }
+
             $cloudpath = I('cloudpath');
             $localpath = I('localpath');
             $comment = I('comment');

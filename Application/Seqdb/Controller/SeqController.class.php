@@ -8,6 +8,8 @@ class SeqController extends AdminController {
     public function index(){
         $seq = M('seq');
         $data = $seq->order('id desc')->select();
+        $uid = is_login();
+        $this->assign('uid',$uid);
         $this->assign('seq',$data);
         $this->display();
     }

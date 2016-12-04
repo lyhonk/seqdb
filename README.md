@@ -8,7 +8,9 @@ seqDB配置
 -----
 
 1.将seqdb.sql文件导入到数据库
+
 2.修改数据库连接文件
+
 ```
 Application/Common/Conf/config.php
 Application/User/Conf/config.php
@@ -19,8 +21,8 @@ docker快速配置环境
 
 1.下载mysql和nginx的镜像
 ```
-git pull mysql:5.6
-git pull richarvey/nginx-php-fpm:php5
+docker pull mysql:5.6
+docker pull richarvey/nginx-php-fpm:php5
 ```
 
 2.运行数据库
@@ -45,11 +47,17 @@ docker run --name seqdb-web -p 8989:80 -v /homedir/seqdb/php/:/var/www/html -d r
 TUDO：
 ----
 1.用户删除
+
 2.数据前后段验证
+
 3.数据导出
+
 4.数据导入
+
 5.用户权限分配
+
 6.组管理
+
 7.组权限分配
 
 

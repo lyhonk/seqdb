@@ -173,17 +173,22 @@ class DataController extends AdminController {
                 $sample_type="未收录";
             }else{
                 $sample_name = M('sample')->where('sampleid='.$sample_id)->field('name')->select();
+                $sample_name = $sample_name[0]['name'];
                 $sample_type = M('sample')->where('sampleid='.$sample_id)->field('type')->select();
+                $sample_type = $sample_type[0]['type'];
             }
+
             
             if($lib_id=="00" || $lib_id==""){
                 $seqtype="未收录";
                 $platform="未收录";
             }else{
                 $seqtype = M('seqlib')->where('seq_id='.$seq_id.' and lib_id='.$lib_id)->field('seqtype')->select();
+                $seqtype = $seqtype[0]['seqtype'];
                 $platform = M('seqlib')->where('seq_id='.$seq_id.' and lib_id='.$lib_id)->field('platform')->select();
+                $platform = $platform[0]['platform'];
             }
-
+            $data['id'] = I('id');
             $data['data_id'] = $data_id;
             $data['seq_id'] = $seq_id;
             $data['lib_id'] = $lib_id;
@@ -206,9 +211,8 @@ class DataController extends AdminController {
             $data['platform'] = $platform;
             $data['read_order'] = $read_order;
 
-            $data = M('data');
-            $data->save($data);
-
+            $datafile = M("data");
+            $datafile->save($data);
             action_log('update_data','data',$uid,$uid);
             $this->success('修改成功',U('data/index'));
 

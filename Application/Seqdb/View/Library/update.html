@@ -36,8 +36,8 @@
                                             <select class="selectpicker" name="sample_id" data-hide-disabled="true" data-live-search="true" title="请选择样本来源">
                                                 <option value="none">样本不在本数据库</option>
                                                 <foreach name="sampleid" item="sample" >
-                                                    <eq name="$sample['sampleid']" value="$library['sampleid']">
-                                                        <option value="{$sample['sampleid']}" selected>Sample ID:{$sample['sampleid']} Type:{$sample['type']} Name:{$sample['name']} Source:{$sample['source']} Nucleic_acid:{$sample['nucleic_acid']}</option>
+                                                    <eq name="sample['sampleid']" value="$library['sample_id']">
+                                                        <option value="{$sample['sampleid']}" selected>Sample ID:{$sample['sampleid']} Type:{$sample['type']} Name:{$sample['name']} Source:{$sample['source']} Nucleic_acid:{$sample['nucleic_acid']}</option> 
                                                     <else/>
                                                         <option value="{$sample['sampleid']}">Sample ID:{$sample['sampleid']} Type:{$sample['type']} Name:{$sample['name']} Source:{$sample['source']} Nucleic_acid:{$sample['nucleic_acid']}</option>
                                                     </eq>

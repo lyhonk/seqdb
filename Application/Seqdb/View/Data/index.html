@@ -6,7 +6,7 @@
             </div>
 
             <div class="col-md-6">
-                <a class="btn btn-info pull-right" style="margin-top: 30px;" href="__URL__/add" role="button" target="_blank">添加测序文件</a>
+                <a class="btn btn-info pull-right" style="margin-top: 30px;" href="__URL__/add" role="button">添加测序文件</a>
             </div>
             <div class="col-md-12"><hr></div>
             <div class="col-md-12">
@@ -61,7 +61,7 @@
                                         <case value="3">SE</case>
                                     </switch>
                                 <td>{$obj['comment']}</td>
-                                <td><a href="__URL__/detail/sid/{$obj.id}">详情</a> |<a href="__URL__/update/sid/{$obj.id}">修改</a> | <a href="__URL__/del/sid/{$obj.id}">删除</a></td>
+                                <td> <a href="__URL__/detail/sid/{$obj.id}">详情</a> <eq name="obj['operator']" value="$uid"> | <a href="__URL__/update/sid/{$obj.id}">修改</a> | <a href="__URL__/del/sid/{$obj.id}">删除</a></eq> </td>
                             </tr>
                             </foreach>
                         </tbody>
@@ -123,7 +123,7 @@
                         form.attr('style','display:none');
                         form.attr('target','');
                         form.attr('method','post');
-                        form.attr('action',"http://localhost/index.php?s=/Data/getcsv");
+                        form.attr('action',"__URL__/getcsv");
                       
                         var input1 = $('<input>');
                         input1.attr('type','hidden');

@@ -142,27 +142,14 @@ class SeqController extends AdminController {
         $condition['id'] = I('sid');
         $result = $seq->where($condition)->select();
         $seqid = $seq->where($condition)->getField('seq_id');
+        $uid = is_login();
 
         $seqlib = M('seqlib');
         $seqlibinfo = $seqlib->where('seq_id='.$seqid)->select();
 
         $this->assign('seq',$result[0]);
         $this->assign('seqlibinfo',$seqlibinfo);
+        $this->assign('uid',$uid);
         $this->display(detail);
-    }
-
-    public function test(){
-        $condition['id'] = I('sid');
-        $seq = M('seq');
-            $seqinfo = $seq->where($condition)->select();
-            $seq_id = $seq->where($condition)->getField('seq_id');
-           
-            $seqlib = M('seqlib');
-            $con['seq_id'] = $seq_id;
-            $seqlib = $seqlib->where($con)->select();
-
-            echo "<pre>";
-            var_dump($seqlib);
-            echo "</pre>";
     }
 }

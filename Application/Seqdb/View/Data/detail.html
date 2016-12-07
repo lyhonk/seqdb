@@ -70,9 +70,10 @@
         </div>
         <div class="col-md-6"></div>
         <div class="col-md-6">
-            <a class="btn btn-primary" style="margin-top: 30px;" href="__URL__/update/sid/{$data['id']}" role="button" target="_blank">修改文库信息</a>
-            <a class="btn btn-primary" style="margin-top: 30px; margin-left: 30px;" href="__URL__/del/sid/{$data['id']}" role="button" target="_blank">删除此文库</a>
-            <a class="btn btn-primary" style="margin-top: 30px; margin-left: 30px;" href="__URL__/index" role="button">返回文库列表</a>
+            <eq name="data['operator']" value="$uid">
+            <a class="btn btn-info" style="margin-top: 30px; margin-left: 180px;" href="__URL__/update/sid/{$data['id']}" role="button" target="_blank">修改数据信息</a>
+            <a class="btn btn-danger" style="margin-top: 30px; margin-left: 20px;" href="__URL__/del/sid/{$data['id']}" role="button" target="_blank">删除此数据</a> </eq>
+            <a class="btn btn-primary pull-right" style="margin-top: 30px;" href="__URL__/index" role="button">返回样本列表</a>
         </div>
     </div>
 

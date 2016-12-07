@@ -108,9 +108,12 @@
             </div>
 
             </foreach>
-
-            <div class="col-md-12">
-                <a class="btn btn-primary pull-right" href="__URL__/index" role="button">返回送样列表</a>
+            <div class="col-md-6"></div>
+            <div class="col-md-6">
+                <eq name="seq['operator']" value="$uid">
+                <a class="btn btn-info" style="margin-top: 30px; margin-left: 180px;" href="__URL__/update/sid/{$seq['id']}" role="button" target="_blank">修改样本信息</a>
+                <a class="btn btn-danger" style="margin-top: 30px; margin-left: 20px;" href="__URL__/del/sid/{$seq['id']}" role="button" target="_blank">删除此样本</a> </eq>
+                <a class="btn btn-primary pull-right" style="margin-top: 30px;" href="__URL__/index" role="button">返回样本列表</a>
             </div>
 
         </div>

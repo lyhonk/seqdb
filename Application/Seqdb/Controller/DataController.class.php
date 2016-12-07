@@ -5,8 +5,10 @@ use User\Api\UserApi as UserApi;
 class DataController extends AdminController {
 
     public function index(){
+        $uid = is_login();
         $data = M('data');
         $data = $data->order('id desc')->select();
+        $this->assign('uid',$uid);
         $this->assign('data',$data);
         $this->display();
     }
@@ -238,6 +240,8 @@ class DataController extends AdminController {
         $condition['id'] = I('sid');
         $result = $data->where($condition)->select();
         $this->assign('data',$result[0]);
+        $uid = is_login();
+        $this->assign('uid',$uid);
         $this->display(detail);
     }
 
@@ -302,7 +306,7 @@ class DataController extends AdminController {
 
 
 
-                $header = array(
+           $header = array(
             '0'=> '数据ID',
             '1'=> '文库ID',
             '2'=> '送样ID',
@@ -320,9 +324,8 @@ class DataController extends AdminController {
             '14'=> '本地存储路径',
             '15'=> '云存储路径',
             '16'=> 'MD5',
-            '17'=> '数据备注'
-            '18'=> '操作人',
-            
+            '17'=> '数据备注',
+            '18'=> '操作人', 
         );
 
         export_csv($datainfo, $header, "DataInfo-".time_format($data[time()],"Ymd-His"));

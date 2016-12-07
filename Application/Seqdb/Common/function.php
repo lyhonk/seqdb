@@ -491,3 +491,45 @@ function get_libid($libid=0){
     return M('library')->where('lib_id='.$libid)->getField('id');
 }
 
+function export_csv(&$data, $title_arr, $file_name = '') {
+        ini_set("max_execution_time", "3600");
+     
+        $csv_data = '';
+            
+        $nums = count($title_arr);
+        for ($i = 0; $i < $nums - 1; ++$i) {
+            // $csv_data .= '"' . $title_arr[$i] . '",';
+            // echo $title_arr[$i]."<br>";
+            $csv_data = $csv_data.$title_arr[$i].",";
+        }
+        $csv_data = $csv_data.$title_arr[$nums-1]."\n";      
+        
+        foreach ($data as $row) {
+            $temp = "";
+            foreach ($row as $i => $item){
+                $temp = $temp.$item.",";
+            }
+            $temp = substr($temp,0,strlen($temp)-1); 
+            $temp.= "\n";
+
+            $csv_data = $csv_data.$temp;
+        }
+     
+        $csv_data = mb_convert_encoding($csv_data, "cp936", "UTF-8");
+     
+        $file_name = empty($file_name) ? date('Y-m-d-H-i-s', time()) : $file_name;
+     
+        if (strpos($_SERVER['HTTP_USER_AGENT'], "MSIE")) { // 解决IE浏览器输出中文名乱码的bug
+            $file_name = urlencode($file_name);
+            $file_name = str_replace('+', '%20', $file_name);
+        }
+     
+        $file_name = $file_name . '.csv';
+        header("Content-type:text/csv;");
+        header("content-type:application/csv;charset=UTF-8");
+        header("Content-Disposition:attachment;filename=" . $file_name);
+        header('Cache-Control:must-revalidate,post-check=0,pre-check=0');
+        header('Expires:0');
+        header('Pragma:public');
+        echo $csv_data;
+    }

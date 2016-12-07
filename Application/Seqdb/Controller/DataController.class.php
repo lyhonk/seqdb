@@ -257,4 +257,75 @@ class DataController extends AdminController {
         }
     }
 
+
+    public function getcsv(){
+        $sampleid = I('sampleid');
+
+        $map['id']  = array('in', $sampleid);
+
+        $data = M('data')->where($map)->select();
+
+        $datainfo = array();
+
+        foreach ($data as $key => $info) {
+            $datainfo[$key]['data_id'] = $info['data_id'];
+            $datainfo[$key]['lib_id'] = $info['lib_id'];
+            $datainfo[$key]['seq_id'] = $info['seq_id'];
+            $datainfo[$key]['sample_id'] = $info['sample_id'];
+           
+            $datainfo[$key]['read_length'] = $info['read_length'];
+            $datainfo[$key]['line_number'] = $info['line_number'];
+            $datainfo[$key]['amount'] = $info['amount'];
+            $datainfo[$key]['samle_name'] = $info['samle_name'];
+            $datainfo[$key]['seqtype'] = $info['seqtype'];
+            $datainfo[$key]['platform'] = $info['platform'];
+
+            switch ($info['read_order'])
+            {
+                case 1:
+                    $datainfo[$key]['read_order'] = "R1";
+                case 2:
+                    $datainfo[$key]['read_order'] = "R2";
+                case 3:
+                    $datainfo[$key]['read_order'] = "Single End";
+            }
+            // $file_name = empty($file_name) ? date('Y-m-d-H-i-s', time()) : $file_name;
+            $datainfo[$key]['is_raw'] = ($info['is_raw'] == 0) ? "Raw Data" : "Clean Data" ;
+            $datainfo[$key]['origin_name'] = $info['origin_name'];
+            $datainfo[$key]['new_name'] = $info['new_name'];
+            $datainfo[$key]['localpath'] = $info['localpath'];
+            $datainfo[$key]['cloudpath'] = $info['cloudpath'];
+            $datainfo[$key]['md5'] = $info['md5'];
+            $datainfo[$key]['comment'] = $info['comment'];
+            $datainfo[$key]['operator'] = get_nickname($info['operator']);           
+        }
+
+
+
+                $header = array(
+            '0'=> '数据ID',
+            '1'=> '文库ID',
+            '2'=> '送样ID',
+            '3'=> '样本ID',
+            '4'=> '读长',
+            '5'=> '行数',
+            '6'=> '数据量',
+            '7'=> '样本名称',
+            '8'=> '测序类型',
+            '9'=> '测序平台',
+            '10'=> 'R1 / R2',
+            '11'=> 'Raw / Clen',
+            '12'=> '原文件名',
+            '13'=> '新文件名',
+            '14'=> '本地存储路径',
+            '15'=> '云存储路径',
+            '16'=> 'MD5',
+            '17'=> '数据备注'
+            '18'=> '操作人',
+            
+        );
+
+        export_csv($datainfo, $header, "DataInfo-".time_format($data[time()],"Ymd-His"));
+    }
+
 }

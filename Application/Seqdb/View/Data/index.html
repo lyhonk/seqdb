@@ -9,6 +9,13 @@
                 <a class="btn btn-info pull-right" style="margin-top: 30px;" href="__URL__/add" role="button" target="_blank">添加测序文件</a>
             </div>
             <div class="col-md-12"><hr></div>
+            <div class="col-md-12">
+                导出数据:
+                <a class="btn btn-info" style="margin: 5px 5px 10px 0px;" id="button">Get Info</a>
+                <a class="btn btn-info" style="margin: 5px 5px 10px 5px;" id="select_table">Select All Rows in table</a>
+                <a class="btn btn-info" style="margin: 5px 5px 10px 5px;" id="select_current">Select All Rows Shown</a>
+                <a class="btn btn-info" style="margin: 5px 5px 10px 5px;" id="deselect">Deselect</a>
+            </div>
             </div>
 
             <div class="row">
@@ -18,6 +25,7 @@
                         
                         <thead>
                             <tr>
+                            <th class="text-center">dataid</th>
                             <th class="text-center">数据编号</th>
                             <th class="text-center">样品名称</th>
                             <th class="text-center">样品类型</th>
@@ -34,6 +42,7 @@
                         <tbody class="text-center" >
                             <foreach name="data" item="obj">
                             <tr>
+                                <td>{$obj['id']}</td>
                                 <td>{$obj['data_id']}</td>
                                 <td>{$obj['sample_name']}</td>
                                 <td>{$obj['sample_type']}</td>
@@ -82,8 +91,62 @@
         <script src="__JS__/ie10-viewport-bug-workaround.js"></script>
         <script type="text/javascript" language="javascript" class="init">
             $(document).ready(function() {
-                $('#datatable').DataTable({"order":[[0,"desc"]],
+                
+
+                var table = $('#datatable').DataTable({
+                    "lengthMenu": [[20, 50, 100, 150, -1], [20, 50, 100, 150, "All"]],
+                    "order":[[0,"desc"]],
+                    "columnDefs": [
+                                {
+                                    "targets": [ 0 ],
+                                    "visible": false,
+                                    "searchable": false
+                                }],
             });
+                 
+                    $('#datatable tbody').on( 'click', 'tr', function () {
+                        $(this).toggleClass('selected');
+                    } );
+                 
+                    $('#button').click( function () {
+                        dt = table.rows('.selected').data();
+                        dtlen = dt.length;
+                        var sampleid = new Array();
+                        for (var i=0;i<dtlen;i++)
+                        {
+                            sampleid.push(dt[i][0]);
+                        }
+                        console.log(sampleid);
+
+
+                        var form = $("<form>");
+                        form.attr('style','display:none');
+                        form.attr('target','');
+                        form.attr('method','post');
+                        form.attr('action',"http://localhost/index.php?s=/Data/getcsv");
+                      
+                        var input1 = $('<input>');
+                        input1.attr('type','hidden');
+                        input1.attr('name','sampleid');
+                        input1.attr('value',sampleid);
+                       
+                        $('body').append(form);
+                        form.append(input1);
+                        form.submit();
+                    } );
+
+                    $('#select_table').click(function(){
+                        table.rows().select();
+                    })
+
+                    $('#select_current').click(function(){
+                        table.rows({ page: 'current' }).select();
+                    })
+
+                    $('#deselect').click(function(){
+                        table.rows().deselect();
+                    })
+
             } );
         </script>
     </body>

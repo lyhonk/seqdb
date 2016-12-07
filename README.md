@@ -42,6 +42,44 @@ docker run --name seqdb-web -p 8989:80 -v /homedir/seqdb/php/:/var/www/html -d r
 ```
 给Runtime可写权限
 
+
+数据库备份
+-------
+结合docker与百度云实现快速安全云备份
+
+主要语法有：
+
+
+1.讲数据库导出
+```
+docker exec seqdb-mysql sh -c 'exec mysqldump -uroot -p"$MYSQL_ROOT_PASSWORD" seqdb' > seqdb.sql
+```
+
+2.linux 下使用百度云
+
+[bypy介绍](http://www.lyhonk.com/linuxhuan-jing-xia-shi-yong-bai-du-yun-wang-pan/)
+
+详细介绍在上面这个介绍里
+
+用到的主要是同步备份功能
+
+```
+bypy syncup Local-SQL-dump-dir /sqldump/
+```
+
+3.加入计划任务
+
+```
+crontab -u root -e
+```
+
+每天凌晨数据库变动较小的时候进行备份，我们选在凌晨两点半
+```
+30      2       *       *       *       /root/seqdb/sqldump.sh
+```
+
+
+
 --------------------------------------------------
 
 TUDO：
@@ -52,7 +90,7 @@ TUDO：
 
 3.数据导出
 
-4.数据导入
+4.数据导入【完成】
 
 5.用户权限分配
 

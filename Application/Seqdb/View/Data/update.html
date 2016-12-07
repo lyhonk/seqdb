@@ -107,12 +107,13 @@
 
                                     <div class="col-md-3">
                                         <div class="form-group form-inline">
-                                            <label>read状态: {$data['read_order']}</label>
+                                            <label>read状态:</label>
                                             <select class="selectpicker" name="read_order" data-hide-disabled="true" title="Read order" data-width="150px">
                                                 <switch name="data['read_order']">
                                                     <case value="1"><option value="1" selected>Read 1</option><option value="2">Read 2</option><option value="3">Single end</option></case>
                                                     <case value="2"><option value="1">Read 1</option><option value="2" selected>Read 2</option><option value="3">Single end</option></case>
                                                     <case value="3"><option value="1">Read 1</option><option value="2">Read 2</option><option value="3" selected>Single end</option></case>
+                                                    <default /><option value="1">Read 1</option><option value="2">Read 2</option><option value="3">Single end</option>
                                                 </switch>
                                             </select>
                                         </div>
